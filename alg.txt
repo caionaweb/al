@@ -1,0 +1,622 @@
+﻿________________
+10/01/2018                      VETOR
+________________
+
+
+09h - 12h sala 253 ou gabinete de professores substitutos
+rafaelcorreia@inf.ufg.br
+Moodle AFED2018V
+Senha ED-2018-V
+
+//Busca em qual posição está o valor informado
+//for
+int[100]
+
+int busca(int v[], int t, int valor){
+
+int i;
+for(i=0; i<t; i++){
+        
+        if(v[i] == valor)
+        return i;
+        }
+        
+return -1;
+
+}
+
+
+//while
+
+int i = t - 1;
+
+while( v[i] = valor && >= 0) 
+i--;
+return i;
+
+
+
+
+//inserir - retorna a quantidade de elementos no vetor
+
+int inserir(int v[], int t, int valor, int index){
+
+for ( i = t - 1; i >= index; i--){
+v[i+1] = v[i];
+}
+
+v[index]=valor;
+t++;
+return t;
+
+}
+
+}
+
+
+//remover
+
+int remover(int v[], int t, int index){
+
+v[index]=0;
+
+for ( i = index; i < t; i++){
+v[i] = v[i+1];
+}
+
+v[t]=null;
+
+t--;
+return t;
+
+}
+
+
+
+//remover baseado em valor
+
+
+int remover(int v[], int t, int valor){
+
+int aux = t;
+for ( i = 0; i < t; i++){
+
+        if(v[i] == valor){
+
+        v[i] = null;
+
+        }
+}
+
+for ( i = index; i < t; i++){
+
+        if(v[i]==null){
+                v[i] = v[i+1];
+                v[i+1] = null;
+                aux--;
+        }
+}
+
+return aux;
+
+}
+
+
+________________
+
+
+15/01/2018                          PILHA
+________________
+
+
+
+
+Exemplo quase completo exercício 2:
+
+
+
+#include <stdio.h> 
+#define MAX 20 
+int main() { 
+char frase[100], pilha[MAX], saida[100]; 
+int i=0, j=0, topo=-1; 
+gets(frase); 
+do { 
+if (frase[i] != ' ' && frase[i] != '\0') { //o erro é aqui
+if (topo < MAX) 
+pilha[++topo] = frase[i++]; 
+else { 
+printf("\nPilha cheia!\n"); 
+return -1; 
+} 
+} 
+else { 
+while (topo >= 0) 
+saida[j++] = pilha[topo--]; 
+saida[j++] = frase[i++]; 
+} 
+} while (frase[i] != '\0'); 
+saida[j] = '\0'; 
+printf ("\nFrase: %s\nSaida: %s\n", frase, saida); 
+return 0; 
+}
+
+
+
+
+/*codigo do Professor
+int main(){
+Pilha p;
+char frase[100];
+int i=-1;
+printf(“Informe a frase \n”);
+scanf(“%[^\n]%*c” frase);
+do{
+    i++;
+    if(frase[i]!=’ ‘&&frase[i]!=”\0”)
+        push(&p,frase[i]);
+    else{
+        while(!vazia(&p))
+            printf(“%c”,pop(&p));
+        printf(“ ”);
+        }
+    }while(frase[i]!='\0')
+}
+
+
+*/codigo do professor
+
+
+________________
+
+
+16/01/2018                 FILA
+________________
+
+
+
+
+#include <stdio.h>
+#define qtd 10
+typedef struct fila{
+    int dados [qtd];
+    int fim,inicio;    
+}Fila
+
+
+void inicializa (Fila *f){
+    f->fim=0;
+    f->inicio=0;
+}
+//verificar se a lista esta cheia
+int filacheia(Fila *f){
+    if(f->fim==qtd)
+        return 1;
+    return 0;
+}
+//enfileirar, inserir
+int enqueue (Fila *f, int valor){
+    if(filacheia(f)){
+        printf("fila cheia");
+        return -1;
+    }
+    f->dados[f->fim]=valor;
+    f->fim++;
+    return f->fim;
+}
+//remocao
+int filavazia(Fila *f){
+    if(f->fim==0)
+        retun 1;
+    return 0;
+}
+//desenfileirar
+int dequeue(Fila *f){
+    if(filavazia(f)){
+        printf("fila vazia");
+        return -1;
+    }
+     f->fim--;
+    int aux,i;
+    aux=f->dados[0];
+    for(i=0,i<f->fim,i++){
+        f->dados[i]=f->dados[i+1];
+    }   
+    return aux;
+}
+//verifica a quantidade de elementos na fila
+int verificatamanho(Fila *f){
+    return f->fim;
+}
+
+
+
+
+
+
+
+
+________________
+
+
+17/01/2018            Fila Circular
+________________
+
+
+Fila Circular
+
+
+#define qtd 10
+Typedef struct filaC {
+        int dados[qtd];
+        Int inicio;
+        Int fim;
+} FilaC;
+
+
+Int filacheia (FilaC *f){
+        if((f->fim+1)%qtd==f->inicio)
+                Return 1;
+        return 0;
+}
+
+
+Int enqueue (filaC *f, int valor){
+        if(filacheia(f)){
+                printf(“Fila cheia”);
+                Return -1;
+        }
+        
+        f->dados[f->fim+1] = valor;
+        f->fim = (f->fim+1)%qtd;
+        Return f->fim;
+
+
+}
+
+
+Int filavazia (filaC *f){
+        if(f->fim == f->inicio)
+                Return 1;
+        Return 0;
+}
+
+
+Int dequeue(FilaC *f){
+        if(filavazia(f){
+                printf(“Fila vazia”);
+                Return -1;
+        }
+        Int aux = f->dados[f->inicio];
+        f->inicio = (f->inicio+1)%qtd;
+        Return aux;
+}
+
+
+Lista
+#define qtd 10
+
+
+Typedef struct lista {
+        Int dados[qtd];
+        Int fim;
+}  Lista;
+
+
+void inicializaLista(Lista *l){
+        l->fim = 0;
+}
+
+
+Int listaCheia(Lista *l){
+        if(l->fim == qtd){
+                printf(“Lista cheia”);
+                Return 1;
+        }
+        Return 0;
+}
+
+
+Int inserirPosiçao(Lista *l, int valor, int K){
+        if(listaCheia(l))
+                Return -1;
+        if(k < 0 || k > l->fim){
+                printf(“Posição invalida insira entre 0 e %d”, l->fim);
+                Return -2;
+        }
+        Int i;
+        for(i = l->fim; i > K; i--){
+                l->dados[i] = l->dados[i-1];
+                l->dados[k] = valor;
+                return ++l->fim;
+        }
+}
+
+
+Int inserirInicio(Lista *l, int valor){
+        Return inserirPosição(l, valor, 0);
+}
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+22/01/2018            Lista 
+________________
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define Qtd 10
+
+
+typedef struct lista {
+    int dados[Qtd];
+    int fim;
+} Lista;
+
+
+// inicia
+
+
+void inicia (Lista *l) {
+    f->fim = 0;
+}
+
+
+// vazia
+
+
+int vazia (Lista *l) {
+    if (l->fim == 0) {
+        printf("Lista vazia.\n");
+        return 1;
+    }
+    return 0;
+}
+
+
+// remover na posicao
+
+
+int removerposicao (Lista *l, int k) {
+    int i, aux;
+
+
+    if (vazia(l)) {
+        return -1;
+    }
+
+
+    if (k < 0 || k >= l->fim) {
+        printf("Posicao invalida!\n");
+        return -1;
+    }
+
+
+    aux = l->dados[k];
+
+
+    for (i = k; i < l->fim-1; i++) {
+        l->dados[i] = l->dados[i+1];
+    }
+
+
+    l->fim--;
+
+
+    return aux;
+}
+
+
+// remover no inicio
+
+
+int removerinicio (Lista *l) {
+    return removerposicao (l, 0);
+}
+
+
+}
+
+
+// remover no fim
+
+
+int removerfim (Lista *l) {
+    return removerposicao (l, l->fim-1);
+}
+
+
+//
+
+
+Fila dinamica tipo 1
+
+
+Typedef struct no {
+
+
+        Int valor;
+        Struct no * proximo;
+}No;
+
+
+Typedef struct fila {
+
+
+        No* inicio;
+        Int qtd;
+}Fila;
+Void inicializa Fila(Fila *f){
+        f->inicio = NULL;
+        f->qtd = 0;
+}
+
+
+Int enqueue(Fila *f, int v){
+        No *novo;
+        Novo = malloc(sizeof(No));
+        novo->valor = v;
+        novo->proximo = NULL;
+        if(filaVazia(f))
+                f->inicio = novo;
+        Else{
+                No *aux = f->inicio;
+                while(aux->proximo != NULL)
+                        Aux = aux->proximo
+                aux->proximo = novo;
+        }
+
+
+        Return ++f->qtd;
+}
+
+
+Int dequeue(Fila *f){
+        if(filaVazia()){
+                printf(“Fila vazia”);
+Return -1;
+        }
+        No *i = fi->inicio;
+        f->inicio = i->proximo;
+        Int aux = i->valor;
+        free(i);
+        i = NULL;
+        f->qtd--;
+        Return aux;
+}
+
+
+Fila dinamica com fim e inicio tipo 2
+Typedef struct no {
+
+
+        Int valor;
+        Struct no * proximo;
+}No;
+
+
+Typedef struct fila {
+        No* inicio;
+        No* fim;
+        Int qtd;
+}Fila;
+
+
+Void inicializa Fila(Fila *f){
+        f->inicio = NULL;
+        f->fim = NULL;
+        f->qtd = NULL;
+}
+
+
+Int enqueue(Fila *f, int v){
+        No *novo;
+        Novo = malloc(sizeof(No));
+        novo->valor = v;
+        novo->proximo = NULL;
+        if(filaVazia(f))
+                f->inicio = novo;
+        Else{
+                f->fim->proximo = novo;
+                f->fim = novo;
+        }
+
+
+        Return ++f->qtd;
+}
+
+
+Int dequeue(Fila *f){
+        if(filaVazia()){
+                printf(“Fila vazia”);
+Return -1;
+        }
+        No *i = fi->inicio;
+        f->inicio = i->proximo;
+        Int aux = i->valor;
+        free(i);
+        i = NULL;
+        f->qtd--;
+        Return aux;
+}
+
+
+Lista dinamica simplesmente encadeada;
+
+
+Typedef struct no{
+        Int valor;
+        Struct no*proximo;
+}
+
+
+Typedef struct lista {
+        Int qtd;
+        No *inicio;
+}Lista;
+
+
+Void inicializa Lista(Lista *l){
+        l->qtd = 0;
+        l->inicio = NULL;
+}
+
+
+No* BuscaP(Lista *l, int K){
+        No *nav = l->inicio;
+        Int i;
+        for(i=0; i < K; i++){
+                Nav = nav->proximo;
+}
+Return nav;
+}
+
+
+Int inserirP(Lista *l, int v, int K){
+        No *novo = malloc(sizeof(No));
+        novo->valor = v;
+        if(K==0){
+                novo->proximo = l->inicio;
+                l->inicio = novo;
+                Return ++l->qtd;
+        }
+        No *nav = BuscaP(l, K-1)
+        novo->proximo = nav-proximo;
+        nav->proximo = novo;
+        Return ++l->qtd;
+}
+
+
+Int removerP(Lista *l, int K){
+        if(!posicaoValida(l,K)
+                Return -1;
+        No *nav; int aux;
+        if(K == 0){
+                Nav = l->inicio;
+                Aux = nav->valor;
+                l->inicio = nav->proximo;
+                free(nav);
+                Nav = NULL;
+        }else{
+                Nav = BuscaP(l,K-1);
+                No *lixo = nav->proximo
+                nav->proximo = lixo->proximo;
+                Aux = lixo->valor;
+                free(lixo);
+Lixo = NULL;
+        }
+        l->qtd--;
+        Return aux;
+}
