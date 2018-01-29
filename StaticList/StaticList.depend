@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1476375179 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\configs.c
+	<locale.h>
+	"configs.h"
+
+1476375196 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\configs.h
+
+1476414461 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"staticList.h"
+
+1476453578 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\staticlist.h
+	"configs.h"
+	"node.h"
+
+1476386519 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\node.h
+
+1476456135 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\staticlist.c
+	<stdio.h>
+	<stdlib.h>
+	"staticList.h"
+
+1517169183 source:c:\users\cao\desktop\tmp\ed_in_c\staticlist\configs.c
+	<locale.h>
+	"configs.h"
+
+1517169183 c:\users\cao\desktop\tmp\ed_in_c\staticlist\configs.h
+
+1517169183 source:c:\users\cao\desktop\tmp\ed_in_c\staticlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"staticList.h"
+
+1517169183 c:\users\cao\desktop\tmp\ed_in_c\staticlist\staticlist.h
+	"configs.h"
+	"node.h"
+
+1517169183 c:\users\cao\desktop\tmp\ed_in_c\staticlist\node.h
+
+1517169183 source:c:\users\cao\desktop\tmp\ed_in_c\staticlist\staticlist.c
+	<stdio.h>
+	<stdlib.h>
+	"staticList.h"
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1476382811 source:d:\projetos\estruturasdados\data_structs_c_implementation\testelista\main.c
+	<stdio.h>
+	<stdlib.h>
+

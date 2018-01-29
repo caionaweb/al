@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1476375179 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\configs.c
+	<locale.h>
+	"configs.h"
+
+1476375196 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\configs.h
+
+1476386322 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"configs.h"
+	"staticList.h"
+
+1476386264 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\staticlist.h
+	"node.h"
+
+1476386519 d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\node.h
+
+1476385754 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\node.c
+
+1476386259 source:d:\projetos\estruturasdados\data_structs_c_implementation\staticlist\staticlist.c
+	<stdlib.h>
+	"staticList.h"
+

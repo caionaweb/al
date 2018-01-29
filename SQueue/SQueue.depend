@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1517169183 source:c:\users\cao\desktop\tmp\ed_in_c\squeue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

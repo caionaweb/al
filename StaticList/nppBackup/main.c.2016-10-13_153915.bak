@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include "configs.h"
+#include "staticList.h"
+
+int main() {
+    set_configs(); // configurações gerais
+
+    printf( "Testando funções em <<staticList.h>>\n" );
+    printf( "-----------------------------------------------------------------\n\n" );
+
+    printf( "Criando lista estática de MAX_LENGHT posições...\n" );
+    StaticList list = static_list_build();
+
+    int i;
+    for ( i = 0; i < MAX_LENGTH; i++) {
+        printf( "Entre com os dados do Nó número %d\n", i + 1 );
+        printf( "Chave numérica de %d: \n", i + 1 );
+        scanf( "%d", &list->array[ i ].numericKey );
+        fflush( stdin );
+    }
+
+    // Imprimindo os valores das chaves numericas dos slots da lista:
+    for ( i = 0; i < MAX_LENGTH; i++) {
+        printf( "Valor numérico de %d: \n", list->array[ i ].numericKey );
+    }
+
+    printf("\n\n<<FIM TESTE>>\n\n");
+    return 0;
+}

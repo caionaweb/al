@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1476895494 source:d:\projetos\estruturasdados\data_structs_c_implementation\sstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
